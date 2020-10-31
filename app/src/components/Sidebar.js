@@ -1,4 +1,5 @@
 import React from "react";
+import Clock from "./widgets/Clock.js";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCloudSunRain } from "@fortawesome/free-solid-svg-icons";
 import "./Sidebar.css";
@@ -42,6 +43,7 @@ function Sidebar(props) {
         <br />
         <span className="day"> {day}</span>
       </div>
+      <Clock />
       {/* <FontAwesomeIcon icon={ faCloudSunRain } /> */}
     </div>
   );
