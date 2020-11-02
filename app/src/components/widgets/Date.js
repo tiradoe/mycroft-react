@@ -1,4 +1,5 @@
 import React from "react";
+import "./Date.css";
 
 class DateWidget extends React.Component {
   days = [

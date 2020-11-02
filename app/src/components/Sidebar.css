@@ -1,10 +1,7 @@
-.day-of-month {
-    font-size: 3em;
-}
-
-.date {
-    color: white;
-    font-weight: bold;
-    text-align: center;
-    padding-top: 1em;
+.sidebar {
+    background-color: blue;
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    width: 30%;
 }

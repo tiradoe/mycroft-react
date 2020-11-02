@@ -16,13 +16,19 @@ class Clock extends React.Component {
   }
 
   render() {
-    const date = this.state.date;
+    let time = this.state.date.toLocaleTimeString([], {
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+
+    // Remove the leading zero in Chrome
+    if (time.substr(0, 1) === "0") {
+      time = time.substr(1);
+    }
 
     return (
       <div id="clock">
-        <span>
-          {date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" })}
-        </span>
+        <span>{time}</span>
       </div>
     );
   }
