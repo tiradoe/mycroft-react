@@ -1,7 +1,7 @@
 import React from "react";
 
-function DateWidget(props) {
-  const days = [
+class DateWidget extends React.Component {
+  days = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -11,7 +11,7 @@ function DateWidget(props) {
     "Saturday",
   ];
 
-  const months = [
+  months = [
     "January",
     "February",
     "March",
@@ -26,19 +26,29 @@ function DateWidget(props) {
     "December",
   ];
 
-  const today = new Date();
-  const day = days[today.getDay()].toUpperCase();
-  const month = months[today.getMonth()].toUpperCase();
+  componentDidMount() {
+    this.timerId = setInterval(() => this.setState({ date: new Date() }), 1000);
+  }
 
-  return (
-    <div className="date">
-      <span className="month"> {month}</span>
-      <br />
-      <span className="day-of-month"> {today.getDate()}</span>
-      <br />
-      <span className="day"> {day}</span>
-    </div>
-  );
+  componentWillUnmount() {
+    clearInterval(this.timerId);
+  }
+
+  render() {
+    const today = new Date();
+    const day = this.days[today.getDay()].toUpperCase();
+    const month = this.months[today.getMonth()].toUpperCase();
+
+    return (
+      <div className="date">
+        <span className="month"> {month}</span>
+        <br />
+        <span className="day-of-month"> {today.getDate()}</span>
+        <br />
+        <span className="day"> {day}</span>
+      </div>
+    );
+  }
 }
 
 export default DateWidget;
