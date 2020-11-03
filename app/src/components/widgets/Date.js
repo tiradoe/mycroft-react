@@ -28,6 +28,8 @@ function DateWidget(props) {
   ];
 
   const [date, setDate] = useState(new Date());
+  const day = days[date.getDay()].toUpperCase();
+  const month = months[date.getMonth()].toUpperCase();
 
   useEffect(() => {
     const timerId = setInterval(() => setDate(new Date()), 1000);
@@ -37,15 +39,10 @@ function DateWidget(props) {
     };
   }, []);
 
-  const day = days[date.getDay()].toUpperCase();
-  const month = months[date.getMonth()].toUpperCase();
-
   return (
     <div className="date">
       <span className="month"> {month}</span>
-      <br />
       <span className="day-of-month"> {date.getDate()}</span>
-      <br />
       <span className="day"> {day}</span>
     </div>
   );

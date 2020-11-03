@@ -1,5 +1,6 @@
 .day-of-month {
     font-size: 3em;
+    display: block;
 }
 
 .date {
