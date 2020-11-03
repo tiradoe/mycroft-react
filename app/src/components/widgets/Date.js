@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Date.css";
 
-class DateWidget extends React.Component {
-  days = [
+function DateWidget(props) {
+  const days = [
     "Sunday",
     "Monday",
     "Tuesday",
@@ -12,7 +12,7 @@ class DateWidget extends React.Component {
     "Saturday",
   ];
 
-  months = [
+  const months = [
     "January",
     "February",
     "March",
@@ -27,29 +27,28 @@ class DateWidget extends React.Component {
     "December",
   ];
 
-  componentDidMount() {
-    this.timerId = setInterval(() => this.setState({ date: new Date() }), 1000);
-  }
+  const [date, setDate] = useState(new Date());
 
-  componentWillUnmount() {
-    clearInterval(this.timerId);
-  }
+  useEffect(() => {
+    let timerId = setInterval(() => {
+      setDate(new Date());
+    }, 1000);
 
-  render() {
-    const today = new Date();
-    const day = this.days[today.getDay()].toUpperCase();
-    const month = this.months[today.getMonth()].toUpperCase();
+    return clearInterval(timerId);
+  }, []);
 
-    return (
-      <div className="date">
-        <span className="month"> {month}</span>
-        <br />
-        <span className="day-of-month"> {today.getDate()}</span>
-        <br />
-        <span className="day"> {day}</span>
-      </div>
-    );
-  }
+  const day = days[date.getDay()].toUpperCase();
+  const month = months[date.getMonth()].toUpperCase();
+
+  return (
+    <div className="date">
+      <span className="month"> {month}</span>
+      <br />
+      <span className="day-of-month"> {date.getDate()}</span>
+      <br />
+      <span className="day"> {day}</span>
+    </div>
+  );
 }
 
 export default DateWidget;
