@@ -1,9 +1,8 @@
 .video-display {
-    background-color: green;
     display: inline-block;
     height: 100%;
-    position: relative;
-    width: 70%;
+    position: absolute;
+    width: 90%;
     bottom: 3em;
     right: 2em;
 }
