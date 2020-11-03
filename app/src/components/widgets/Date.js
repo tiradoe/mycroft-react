@@ -30,11 +30,11 @@ function DateWidget(props) {
   const [date, setDate] = useState(new Date());
 
   useEffect(() => {
-    let timerId = setInterval(() => {
-      setDate(new Date());
-    }, 1000);
+    const timerId = setInterval(() => setDate(new Date()), 1000);
 
-    return clearInterval(timerId);
+    return function cleanup() {
+      clearInterval(timerId);
+    };
   }, []);
 
   const day = days[date.getDay()].toUpperCase();
