@@ -7,11 +7,27 @@ function MycroftMessageBus(props) {
     let eventData = JSON.parse(event.data);
 
     if (eventData.type === "gui.value.set") {
-      console.log(eventData);
+      switch (eventData.data.__from) {
+        case "mycroft-weather.mycroftai":
+          props.callback(handleWeather(eventData.data));
+          break;
+        default:
+          break;
+      }
     }
   };
+  return null;
+}
 
-  return <div>Messages and stuff</div>;
+function handleWeather(data) {
+  return (
+    <React.Fragment>
+      <span> {data.location}</span>
+      <span> Current Temperature {data.current} </span>
+      <span> Today's Min: {data.min} </span>
+      <span> Today's Max: {data.max} </span>
+    </React.Fragment>
+  );
 }
 
 export default MycroftMessageBus;

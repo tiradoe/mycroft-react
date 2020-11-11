@@ -4,12 +4,23 @@ import Sidebar from "./Sidebar.js";
 import "./ContentWindow.css";
 
 function ContentWindow(props) {
-  return (
-    <div className="content-container">
-      <VideoDisplay />
+  let display;
+
+  const standardDisplay = (
+    <React.Fragment>
       <Sidebar />
-    </div>
+      <VideoDisplay />
+    </React.Fragment>
   );
+
+  console.log(props.display);
+  if (props.display === null) {
+    display = standardDisplay;
+  } else {
+    display = props.display;
+  }
+
+  return <div className="content-container">{display}</div>;
 }
 
 export default ContentWindow;

@@ -5,4 +5,5 @@
     width: 90%;
     bottom: 3em;
     right: 2em;
+    z-index: 10;
 }
