@@ -13,7 +13,6 @@ function ContentWindow(props) {
     </React.Fragment>
   );
 
-  console.log(props.display);
   if (props.display === null) {
     display = standardDisplay;
   } else {

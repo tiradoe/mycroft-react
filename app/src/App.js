@@ -8,6 +8,9 @@ function App() {
 
   const updateDisplay = (data) => {
     setDisplay(data);
+
+    // reset the display after 15 seconds
+    setTimeout(() => setDisplay(null), 15000);
   };
 
   return (

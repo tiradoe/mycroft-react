@@ -1,0 +1,49 @@
+h1 {
+    margin: 0;
+}
+
+.content-container {
+    background-color: #329adb;
+}
+
+.current {
+    font-size: 5em;
+    left: 7.5em;
+    position: absolute;
+}
+
+.forecast-item {
+    border: solid white 2px;
+    display: inline-block;
+    margin: 1em;
+    padding: 1em;
+}
+
+.today-description {
+    position: relative;
+    bottom: 2em;
+    display: inline-block;
+    text-transform: capitalize;
+}
+
+.weather-widget {
+    color: white;
+    padding: 1em;
+}
+
+.min-max {
+    display: block;
+    margin: 1em;
+}
+
+.forecast {
+    text-align: center;
+}
+
+#today-stats {
+    display: block;
+}
+
+.today-temp {
+    display: inline-block;
+}
