@@ -11,27 +11,25 @@ function Weather(props) {
         {city}, {state}
       </h1>
       <div className="today-forecast">
-        <div className="today-weather">
-          <img
-            className="weather-icon"
-            alt="Weather Icon"
-            src={
-              "http://openweathermap.org/img/wn/" + props.data.icon + "@2x.png"
-            }
-          />
-          <span className="today-description">{props.data.condition}</span>
-          <span className="current">{props.data.current} &deg;</span>
-          <div id="today-stats">
-            <div class="today-temp">
-              <span className="min-max">Min: {props.data.min}&deg;</span>
-              <span className="min-max">Max: {props.data.max}&deg;</span>
-            </div>
-            <div class="today-temp">
-              <span className="min-max">
-                Humidity: {props.data.humidity.replace("percent", "\xB0")}
-              </span>
-              <span className="min-max">Wind: {props.data.wind}</span>
-            </div>
+        <img
+          className="weather-icon"
+          alt="Weather Icon"
+          src={
+            "http://openweathermap.org/img/wn/" + props.data.icon + "@2x.png"
+          }
+        />
+        <span className="today-description">{props.data.condition}</span>
+        <span className="current">{props.data.current} &deg;</span>
+        <div id="today-stats">
+          <div className="today-temp">
+            <span className="min-max">Min: {props.data.min}&deg;</span>
+            <span className="min-max">Max: {props.data.max}&deg;</span>
+          </div>
+          <div className="today-temp">
+            <span className="min-max">
+              Humidity: {props.data.humidity.replace("percent", "\xB0")}
+            </span>
+            <span className="min-max">Wind: {props.data.wind}</span>
           </div>
         </div>
       </div>

@@ -2,6 +2,10 @@ h1 {
     margin: 0;
 }
 
+#today-stats {
+    display: block;
+}
+
 .content-container {
     background-color: #329adb;
 }
@@ -12,11 +16,20 @@ h1 {
     position: absolute;
 }
 
+.forecast {
+    text-align: center;
+}
+
 .forecast-item {
     border: solid white 2px;
     display: inline-block;
     margin: 1em;
     padding: 1em;
+}
+
+.min-max {
+    display: block;
+    margin: 1em;
 }
 
 .today-description {
@@ -26,24 +39,16 @@ h1 {
     text-transform: capitalize;
 }
 
+.today-temp {
+    display: inline-block;
+}
+
 .weather-widget {
     color: white;
     padding: 1em;
 }
 
-.min-max {
-    display: block;
-    margin: 1em;
-}
-
-.forecast {
-    text-align: center;
-}
-
-#today-stats {
-    display: block;
-}
-
-.today-temp {
-    display: inline-block;
+.weather-icon {
+    min-height: 100px;
+    min-width: 100px;
 }
