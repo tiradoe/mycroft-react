@@ -10,7 +10,7 @@ function App() {
     setDisplay(data);
 
     // reset the display after 15 seconds
-    // setTimeout(() => setDisplay(null), 15000);
+     setTimeout(() => setDisplay(null), 15000);
   }, 250);
 
   return (
