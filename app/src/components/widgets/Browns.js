@@ -7,19 +7,15 @@ import steelers_lose from "../../assets/steelers-lose.gif";
 function Browns(props) {
   let background_image;
 
-
-  console.log(props.gameResult);
   switch (props.gameResult) {
-    case 'won':
-      background_image = browns_win
+    case "won":
+      background_image = browns_win;
       break;
-    case 'beat_steelers':
+    case "beat_steelers":
       background_image = steelers_lose;
       break;
     default:
       background_image = browns_lose;
-
-
   }
 
   return (
